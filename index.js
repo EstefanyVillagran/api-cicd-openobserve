@@ -15,7 +15,7 @@ app.use('/api', authRouter);              // Login + CRUD usuarios
 const HTTP_PORT = process.env.PORT || 8080;
 const TCP_PORT = process.env.TCP_PORT || 6061;
 
-// --- 1. ENDPOINTS HTTP ---
+// --- 1. ENDPOINTS HTTP --- 1
 app.get('/api/status', async (req, res) => {
   try {
     await db.ready;
@@ -25,7 +25,7 @@ app.get('/api/status', async (req, res) => {
   }
 });
 
-// --- 1. ENDPOINTS HTTP ---
+// --- 1. ENDPOINTS HTTP --- 2
 /*app.get('/api/status', async (req, res) => {
   try {
     await db.ready;
