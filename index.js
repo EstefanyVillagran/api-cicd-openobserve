@@ -16,10 +16,20 @@ const HTTP_PORT = process.env.PORT || 8080;
 const TCP_PORT = process.env.TCP_PORT || 6061;
 
 // --- 1. ENDPOINTS HTTP ---
-app.get('/api/status', async (req, res) => {
+/*app.get('/api/status', async (req, res) => {
   try {
     await db.ready;
     res.json({ status: 'online revisando', timestamp: new Date() });
+  } catch (err) {
+    res.status(503).json({ error: 'Base de datos no disponible', detail: err.message });
+  }
+});*/
+
+// --- 1. ENDPOINTS HTTP ---
+app.get('/api/status', async (req, res) => {
+  try {
+    await db.ready;
+    res.status(500).json({ error: 'Error intencional de prueba en /api/status', timestamp: new Date() });
   } catch (err) {
     res.status(503).json({ error: 'Base de datos no disponible', detail: err.message });
   }
