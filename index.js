@@ -263,6 +263,9 @@ if (process.env.NODE_ENV !== 'test' && require.main === module) {
       process.exit(1);
     });
 }
+app.get("/otro-push", (req, res) => {
+  res.json({ mensaje: "El segundo push salió bien" });
+});
 
 // Manejo de errores (JSON malformado, excepciones) -> status 4xx/5xx + log
 app.use((err, req, res, next) => {
