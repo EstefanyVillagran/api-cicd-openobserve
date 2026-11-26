@@ -494,4 +494,14 @@ describe('Suite Ampliada de Pruebas Unitarias para Endpoints de la API (30 Tests
     expect([200, 204, 404]).toContain(res.statusCode);
   });
 
+  test('GET /otro-push debe regresar el estado correcto', async () => {
+    const res = await request(app).get('/otro-push');
+
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toHaveProperty(
+      'mensaje',
+      'El segundo push salió bien'
+    );
+  });
+
 });
